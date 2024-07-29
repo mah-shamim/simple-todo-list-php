@@ -1,54 +1,56 @@
 $(document).ready(function() {
-        function loadTasks() {
-            $.ajax({
-                url: 'tasks.php',
-                method: 'GET',
-                success: function(data) {
-                    $('#taskList').html(data);
-                }
-            });
-        }
+       loadTasks();
 
-        loadTasks();
-
-        $('#taskForm').on('submit', function(e) {
-            e.preventDefault();
-            var task = $('#taskInput').val();
+    $('#addTask').on('click', function() {
+        let task = $('#task').val();
+        if (task) {
             $.ajax({
-                url: 'tasks.php',
+                url: 'add_task.php',
                 method: 'POST',
-                data: { action: 'add', task: task },
+                data: { task: task },
                 success: function(response) {
-                    $('#taskInput').val('');
+                    $('#task').val('');
                     loadTasks();
                 }
             });
-        });
-
-        $(document).on('click', '.edit-btn', function() {
-            var id = $(this).data('id');
-            var newTask = prompt('Edit your task:');
-            if (newTask) {
+        }
+    });
+        $(document).on('click', '.editTask', function() {
+                let id = $(this).data('id');
                 $.ajax({
-                    url: 'tasks.php',
+                    url: 'edit_task.php',
                     method: 'POST',
-                    data: { action: 'edit', id: id, task: newTask },
+                    data: { id: id },
                     success: function(response) {
                         loadTasks();
                     }
                 });
-            }
         });
 
-        $(document).on('click', '.delete-btn', function() {
-            var id = $(this).data('id');
-            $.ajax({
-                url: 'tasks.php',
-                method: 'POST',
-                data: { action: 'delete', id: id },
-                success: function(response) {
-                    loadTasks();
-                }
-            });
+    $(document).on('click', '.deleteTask', function() {
+        let id = $(this).data('id');
+        $.ajax({
+            url: 'delete_task.php',
+            method: 'POST',
+            data: { id: id },
+            success: function(response) {
+                loadTasks();
+            }
         });
+    });
+
+    function loadTasks() {
+        $.ajax({
+            url: 'get_tasks.php',
+            method: 'GET',
+            success: function(response) {
+                $('#taskList').html(response);
+            }
+        });
+    }
+
+        
+
+        
+
     });
