@@ -58,9 +58,11 @@ simple-todo-list-php/
 ├── database.sql
 ├── config.php
 ├── index.php
+├── get_task.php
 ├── add_task.php
 ├── edit_task.php
 ├── delete_task.php
-└── styles.css
+├── styles.css
+└── script.js
 ```
 
