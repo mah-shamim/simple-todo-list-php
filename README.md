@@ -5,12 +5,12 @@ A basic to-do list application built with PHP and jQuery. Users can add, edit, a
 
 1. **Clone the Repository:**
    ```sh
-   git clone https://github.com/yourusername/simple-todo-list-php5.6.git
+   git clone https://github.com/yourusername/simple-todo-list-php.git
    ```
 
 2. **Navigate to the Project Directory:**
    ```sh
-   cd simple-todo-list-php5.6
+   cd simple-todo-list-php
    ```
 
 3. **Set Up the Database:**
