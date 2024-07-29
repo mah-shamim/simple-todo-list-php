@@ -14,9 +14,9 @@
             <input type="text" id="task" placeholder="New task">
             <button id="addTask">Add Task</button>
         </div>
-        <div class="task-list">
-            <ul id="taskList"></ul>
-        </div>
+        <ul id="task-list">
+            <!-- Tasks will be loaded here by AJAX -->
+        </ul>
     </div>
 </body>
 </html>
