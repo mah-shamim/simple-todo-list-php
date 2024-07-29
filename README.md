@@ -54,7 +54,7 @@ A basic to-do list application built with PHP and jQuery. Users can add, edit, a
 Here’s a basic file structure for your to-do list application:
 
 ```
-simple-todo-list-php5.6/
+simple-todo-list-php/
 ├── database.sql
 ├── config.php
 ├── index.php
